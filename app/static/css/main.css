@@ -1,0 +1,7 @@
+.iconFormatting {
+    max-height: 200px;
+    max-width: 300px;
+    min-height: 100px;
+    min-width: 150px;
+    object-fit: cover;
+}

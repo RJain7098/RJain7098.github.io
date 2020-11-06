@@ -1,0 +1,16 @@
+<table class="table table-hover">
+    <tr>
+        <td width="70px">
+            <a href='{{ article["url"] }}' target="_blank">
+                <img src='{{ article["urlToImage"] }}' class="iconFormatting" />
+            </a>
+        </td>
+        <td>
+            <a href='{{ article["url"] }}' target="_blank">
+                {{ article["title"] }}
+            </a>
+            <br>
+            {% if article["description"] %} {{ article["description"] }} {% endif %}
+        </td>
+    </tr>
+</table>
