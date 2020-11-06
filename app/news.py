@@ -10,11 +10,18 @@ class News():
     
     def search(self, q, category):
         top_headlines = newsapi.get_top_headlines(q = q, category = category)
-        return top_headlines #allows for using dot notation
+        return top_headlines
 
+def _delete_extra(title, source):
+        index = title.lower().find(source.partition(".")[0].lower())
+        print(index)
+        return title[0:index-2]
 
 # test = News()
-# temp = test.search("help", "technology")
+# temp = test.search("google", "technology")
 # for article in temp["articles"]:
-#     print(article["title"])
-#     print(article["source"]["name"])
+#      print(article["title"])
+#      print(article["source"]["name"])
+#      print(_delete_extra(article["title"], article["source"]["name"]))
+#      print()
+

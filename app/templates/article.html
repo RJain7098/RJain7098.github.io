@@ -7,7 +7,7 @@
         </td>
         <td>
             <a href='{{ article["url"] }}' target="_blank">
-                {{ article["title"] }}
+                {{ delete_extra(article["title"], article["source"]["name"]) }}
             </a>
             <br>
             {% if article["description"] %} {{ article["description"] }} {% endif %}

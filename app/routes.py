@@ -23,3 +23,5 @@ def results():
     searcher = News()
     results = searcher.search(q, category)
     return render_template("results.html", q=q, results=results)
+
+
