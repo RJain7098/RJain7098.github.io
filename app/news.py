@@ -13,18 +13,6 @@ class News():
         top_headlines = newsapi.get_top_headlines(q = q, category = category)
         return top_headlines
 
-def process_date(date):
-    months = ["January", "Feburary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-    parsed = iso8601.parse_date(date)
-    return months[parsed.month-1] + " " + str(parsed.day) + ", " + str(parsed.year)
 
-# print(process_date("2020-11-06T15:30:00Z"))
-
-# test = News()
-# temp = test.search("anne hathaway", "entertainment")
-# for article in temp["articles"]:
-#      print(article["url"])
-#      print(article["publishedAt"])
-#      print()
 
 

@@ -13,6 +13,9 @@ def delete_extra():
         return title[0:index-2]
     return dict(delete_extra=_delete_extra)
 
+# This is some rudimenteray paywall "detetection". Rather than web scraping to find this,
+# I simply gathered a list of sites that have some sort of paywall. It's not comprehensive,
+# but it does help the user at least identify the most obvious ones. 
 @app.context_processor
 def find_paywall():
     def _find_paywall(url):
@@ -31,6 +34,8 @@ def find_paywall():
             return "False"
     return dict(find_paywall=_find_paywall)
 
+# The date from the API is returned in standard ISO 8601 format, so I used
+# a python library to process it into an easier to read format for the user. 
 @app.context_processor
 def process_date():
     def _process_date(date):
