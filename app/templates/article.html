@@ -25,7 +25,7 @@
             {% if find_paywall(article["url"]) == "True" %}
                 <span class="glyphicon glyphicon-warning-sign" style="font-size:2em;" data-toggle="tooltip" title="Possible paywall detected!"></span>
                 Possible paywall detected!
-            {% endif %} <!-- I tried to get it to display a tooltip when the user hovered over the icon, but unfortunatley I couldn't
+            {% endif %} <!-- I tried to get it to display a tooltip when the user hovered over the icon, but unfortunately I couldn't
             get it working in time. It's likely a JS issue. -->
             <br>
             <h5>Source: {{ article["source"]["name"] }}</h5>

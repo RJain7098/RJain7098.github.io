@@ -17,7 +17,7 @@ def index():
         session["category"] = form.category_form.data
         return redirect(url_for("results"))
     else:
-        print(form.errors)
+        flash(form.errors)
     return render_template("index.html", form=form)
 
 @app.route("/results")  

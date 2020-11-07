@@ -1,7 +1,5 @@
 from newsapi.newsapi_client import NewsApiClient
-from types import SimpleNamespace
 import json
-import iso8601
 
 newsapi = NewsApiClient(api_key = "78b9d599c4f94f8fa3afb1a5458928d6")
 

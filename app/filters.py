@@ -15,7 +15,10 @@ def delete_extra():
 
 # This is some rudimenteray paywall "detetection". Rather than web scraping to find this,
 # I simply gathered a list of sites that have some sort of paywall. It's not comprehensive,
-# but it does help the user at least identify the most obvious ones. 
+# but it does help the user at least identify the most obvious ones.
+# Note that the NewsAPI tends not to return many results from popular sites, and I'm 
+# not quite sure why - likely a configuration based on the category and top-hadlines endpoint.
+# So you likely won't see the "paywall warning" very often. 
 @app.context_processor
 def find_paywall():
     def _find_paywall(url):
