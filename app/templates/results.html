@@ -2,7 +2,11 @@
 
 {% block app_content %}
     <h1>Results for "{{q}}"</h1>
-    {% for article in results["articles"] %}
-        {% include 'article.html' %}
-    {% endfor %}
+    {% if results["totalResults"] > 0 %}
+        {% for article in results["articles"] %}
+            {% include 'article.html' %}
+        {% endfor %}
+    {% else %}
+        <h3>No news found! Please try a different search term.</h3>
+    {% endif %}
 {% endblock %}

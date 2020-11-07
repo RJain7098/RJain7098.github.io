@@ -8,14 +8,16 @@
             <fieldset class="form-group">
                 <div class="form-group">
                     <input name = "search_term" id = "search_term" type = "text" />
+                    {% for error in form.search_term.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                    <br><br>
                     <select class="form-control" name = "category_form" id="category_form">
                         {% for val, text in form.category_form.choices %}
                             <option value="{{ val }}">{{ text }}</option>
                         {% endfor %}
                       </select>
                 </div>
-
-
             </fieldset>
             <div class="form-group">
                 {{ form.submit(class="btn btn-outline-info")}}
