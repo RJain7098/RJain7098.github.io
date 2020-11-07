@@ -11,7 +11,4 @@ class News():
         top_headlines = newsapi.get_top_headlines(q = q, category = category)
         return top_headlines
 
-test = News()
-print(test.search("google", "entertainment"))
-
 
