@@ -2,6 +2,13 @@
 <head>
     <link href={{ url_for("static", filename='css/main.css') }} rel="stylesheet" />
 </head>
+<script>
+    $(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip({
+        placement : 'top'
+    });
+});
+</script>
 {% extends 'bootstrap/base.html' %}
 
 {% block title %}

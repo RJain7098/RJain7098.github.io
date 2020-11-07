@@ -2,15 +2,33 @@
     <tr>
         <td width="70px">
             <a href='{{ article["url"] }}' target="_blank">
+                {% if article["urlToImage"] %}
                 <img src='{{ article["urlToImage"] }}' class="iconFormatting" />
+                {% else %}
+                    {% if category == "technology" %}
+                    <img src='{{ default_images["technology"] }}' class="iconFormatting" />
+                    {% elif category == "entertainment" %}
+                    <img src='{{ default_images["entertainment"] }}' class="iconFormatting" />
+                    {% elif category == "sports" %}
+                    <img src='{{ default_images["sports"] }}' class="iconFormatting" />
+                    {% endif %}
+                {% endif %}
             </a>
         </td>
         <td>
             <a href='{{ article["url"] }}' target="_blank">
-                {{ delete_extra(article["title"], article["source"]["name"]) }}
+                <h3><strong>{{ delete_extra(article["title"], article["source"]["name"]) }}</strong></h3>
             </a>
             <br>
             {% if article["description"] %} {{ article["description"] }} {% endif %}
+            <br>
+            {% if find_paywall(article["url"]) == "True" %}
+                <span class="glyphicon glyphicon-warning-sign" style="font-size:2em;" data-toggle="tooltip" title="Possible paywall detected!"></span>
+                Possible paywall detected!
+            {% endif %}
+            <br>
+            <h5>Source: {{ article["source"]["name"] }}</h5>
+            {{ process_date(article["publishedAt"]) }}
         </td>
     </tr>
 </table>
