@@ -1,7 +1,7 @@
 from newsapi.newsapi_client import NewsApiClient
 import json
 
-newsapi = NewsApiClient(api_key = "78b9d599c4f94f8fa3afb1a5458928d6")
+newsapi = NewsApiClient(api_key = "d71bc0d973dc44fca3f46a84fddfae28")
 
 class News():
     def __init__(self):
